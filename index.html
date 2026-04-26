@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LawHub - Connect with Lawyers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sign In Page -->
+    <div id="signInPage" class="page active">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h1>LawHub</h1>
+                <p class="subtitle">Connect with Legal Professionals</p>
+                
+                <form id="signinForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </form>
+                
+                <p class="toggle-text">Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Page -->
+    <div id="signUpPage" class="page">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h1>LawHub</h1>
+                <p class="subtitle">Create Your Account</p>
+                
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="Your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="Create a password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupConfirm">Confirm Password</label>
+                        <input type="password" id="signupConfirm" placeholder="Confirm your password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                </form>
+                
+                <p class="toggle-text">Already have an account? <a href="#" onclick="toggleForm()">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="page">
+        <div class="dashboard-container">
+            <div class="navbar">
+                <div class="navbar-left">
+                    <h2>LawHub</h2>
+                </div>
+                <div class="navbar-right">
+                    <span class="user-greeting">Welcome, <strong id="userDisplay">User</strong>!</span>
+                    <button class="btn btn-logout" onclick="logout()">Logout</button>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="dashboard-header">
+                    <h2>Find a Lawyer</h2>
+                    <p>Select a practice area to view available lawyers and contact information</p>
+                </div>
+
+                <div id="lawyersGrid" class="lawyers-grid">
+                    <!-- Categories will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lawyer Details Page -->
+    <div id="lawyerDetailsPage" class="page">
+        <div class="details-container">
+            <div class="details-header">
+                <button class="btn btn-back" onclick="backToDashboard()">← Back to Categories</button>
+                <div class="logout-btn">
+                    <button class="btn btn-logout" onclick="logout()">Logout</button>
+                </div>
+            </div>
+
+            <div class="details-content">
+                <h2 id="lawyerTitle">Lawyer Category</h2>
+                <p id="lawyerDescription" class="category-description"></p>
+
+                <div id="lawyersList" class="lawyers-list">
+                    <!-- Lawyers will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
